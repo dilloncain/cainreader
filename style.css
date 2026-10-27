@@ -1,0 +1,44 @@
+*{box-sizing:border-box} body{margin:0}
+/* Cain Reader palette: the app's light and dark surfaces with its brand blue. */
+:root {
+  --bg: #e9ebef; --surface: #ffffff; --fg: #182230; --muted: #596579;
+  --line: #e2e5ec; --brand: #244ec9; --link: #244ec9; --panel: #eef2fb;
+  --badge-bg: #eef4f0; --badge-fg: #326249;
+  --body: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Inter, Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14171d; --surface: #20242c; --fg: #e8ecf4; --muted: #adb8c8; --line: #394351;
+    --link: #99b6ff; --panel: #252a34; --badge-bg: #233c32; --badge-fg: #a9dcc0; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171d; --surface: #20242c; --fg: #e8ecf4; --muted: #adb8c8; --line: #394351;
+  --link: #99b6ff; --panel: #252a34; --badge-bg: #233c32; --badge-fg: #a9dcc0; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16.5px; line-height: 1.6; }
+.top { background: var(--surface); border-bottom: 1px solid var(--line); }
+.top-inner { max-width: 46rem; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.logo { width: 36px; height: 36px; flex: none; }
+.name { display: flex; flex-direction: column; line-height: 1.15; }
+.name strong { font-size: 17px; }
+.name span { font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.badge { margin-left: auto; background: var(--badge-bg); color: var(--badge-fg); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; }
+nav { width: 100%; display: flex; gap: 16px; font-size: 14px; }
+main { max-width: 46rem; margin: 24px auto 0; padding: 0 20px 56px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 32px clamp(18px, 5vw, 40px); display: flex; flex-direction: column; gap: 26px; }
+h1 { font-size: clamp(26px, 5vw, 34px); line-height: 1.2; margin: 0; letter-spacing: -.01em; }
+.meta { color: var(--muted); font-size: 14.5px; margin: 6px 0 0; }
+.summary { background: var(--panel); border-left: 4px solid var(--brand); border-radius: 8px; padding: 16px 20px; }
+.summary h2 { margin-bottom: 8px; }
+section { display: flex; flex-direction: column; gap: 10px; }
+h2 { font-size: 18px; margin: 0; }
+p, li { margin: 0; max-width: 68ch; }
+ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+a { color: var(--link); text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--link); outline-offset: 2px; border-radius: 2px; }
+code { font-family: Consolas, ui-monospace, monospace; font-size: .92em; background: var(--panel); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+footer { max-width: 46rem; margin: 0 auto; padding: 0 20px 40px; color: var(--muted); font-size: 13.5px; }
